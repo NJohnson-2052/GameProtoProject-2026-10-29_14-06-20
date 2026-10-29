@@ -1,0 +1,15 @@
+﻿Long story short, I got killed by indie game dev and coding at the same time, so I procrastinated in this class, unfortunately 
+
+
+October 28th 
+
+
+* Added WeaponData Script. This allowed weapons to easily be made from properties
+* Added CameraMovement. Allows the camera to move like an average side scroller
+* Added Healthbars. Made simple enemy healthbars
+* Death Animations. Added a small animation to all enemy deaths and allows duration changes in the Unity engine 
+* Added a boss enemy
+* Made a total of 3 weapons that are all unique using the weapon Data script
+
+
+Those are the changes made for this sprint
