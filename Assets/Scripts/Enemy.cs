@@ -6,7 +6,10 @@ public class Enemy : MonoBehaviour
     public int health = 3;
     public int weakness = 1;
     public float deathDuration = 0.4f;
-
+    [Header("Drops")]
+    public GameObject dropPrefab;
+    public int dropCount = 1;
+    [Range(0f, 1f)] public float dropChance = 1f;
     [Header("Health Bar")]
     public bool showHealthBar = true;
     public float barWidth = 80f;     // pixels
@@ -44,6 +47,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            SpawnDrops();   
             StopAllCoroutines();
             StartCoroutine(Die());
         }
@@ -51,6 +55,19 @@ public class Enemy : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(FlashColor(isCrit ? Color.white : Color.red));
+        }
+    }
+
+    void SpawnDrops()
+    {
+        if (dropPrefab == null) return;
+        if (Random.value > dropChance) return;
+
+        for (int i = 0; i < dropCount; i++)
+        {
+            // Scatter drops slightly so they don't stack on one spot
+            Vector3 offset = new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f), 0f);
+            Instantiate(dropPrefab, transform.position + offset, Quaternion.identity);
         }
     }
 

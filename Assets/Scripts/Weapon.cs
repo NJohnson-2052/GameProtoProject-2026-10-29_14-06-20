@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -11,16 +10,8 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
         {
-            Debug.Log("Fire1 pressed");
-
-            if (Time.time < nextFireTime)
-            {
-                Debug.Log("Still on cooldown");
-                return;
-            }
-
             Shoot();
         }
     }
@@ -32,14 +23,16 @@ public class Weapon : MonoBehaviour
         if (player == null)       { Debug.LogError("Weapon: Player slot is empty"); return; }
 
         WeaponData data = player.CurrentWeaponData;
-        if (data == null)
+        if (data == null) { Debug.LogError("Weapon: Player's Weapons array is empty or has a None element"); return; }
+
+        if (!player.CanFire())
         {
-            Debug.LogError("Weapon: Player's Weapons array is empty or has a None element");
+            Debug.Log("Out of energy for " + data.weaponName);
             return;
         }
 
+        player.SpendEnergy();
         nextFireTime = Time.time + data.fireRate;
-        Debug.Log("Shooting with " + data.weaponName);
 
         for (int i = 0; i < data.bulletCount; i++)
         {
@@ -55,7 +48,6 @@ public class Weapon : MonoBehaviour
 
             Bullet b = obj.GetComponent<Bullet>();
             if (b != null) b.Setup(data, player.currentWeapon);
-            else Debug.LogError("Weapon: Bullet prefab has no Bullet script on it");
         }
     }
 }

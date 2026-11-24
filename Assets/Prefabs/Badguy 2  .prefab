@@ -150,6 +150,9 @@ MonoBehaviour:
   health: 20
   weakness: 0
   deathDuration: 0.4
+  dropPrefab: {fileID: 2374971167029465101, guid: dc65ad4dc01a9cf4fb2d87301a27333c, type: 3}
+  dropCount: 1
+  dropChance: 1
   showHealthBar: 1
   barWidth: 80
   barHeight: 10

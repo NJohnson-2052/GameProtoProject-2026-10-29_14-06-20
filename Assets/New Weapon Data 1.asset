@@ -19,3 +19,5 @@ MonoBehaviour:
   bulletCount: 3
   spreadAngle: 15
   pierce: 0
+  maxEnergy: 20
+  energyCost: 2

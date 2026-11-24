@@ -1012,6 +1012,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cbc229027d8662646a767415ed3a433d, type: 2}
   - {fileID: 11400000, guid: 48a6d486fb05736498223ee922825287, type: 2}
   currentWeapon: 0
+  energy: 
 --- !u!114 &792822601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,6 +1085,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d958f263346db44dab00b7edce471ac, type: 3}
+--- !u!1 &952921179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952921181}
+  - component: {fileID: 952921180}
+  m_Layer: 0
+  m_Name: HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &952921180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952921179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0a43374cc44984c86355c6e99de278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 792822600}
+  x: 15
+  y: 15
+  labelWidth: 100
+  barWidth: 120
+  barHeight: 16
+  spacing: 26
+--- !u!4 &952921181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952921179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.159773, y: -1.2414408, z: 0.09384421}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1060875851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1515,6 +1567,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5066358139148238872, guid: 24883243fe0f9ad4c8d031a0f8d4dde8, type: 3}
+      propertyPath: dropCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066358139148238872, guid: 24883243fe0f9ad4c8d031a0f8d4dde8, type: 3}
+      propertyPath: dropPrefab
+      value: 
+      objectReference: {fileID: 2374971167029465101, guid: dc65ad4dc01a9cf4fb2d87301a27333c, type: 3}
     - target: {fileID: 5066358139148238872, guid: 24883243fe0f9ad4c8d031a0f8d4dde8, type: 3}
       propertyPath: deathDuration
       value: 1.5
